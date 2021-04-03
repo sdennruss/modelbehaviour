@@ -1,38 +1,271 @@
-.App {
-  text-align: center;
+* {
+  font-size: 62.5%;
+  margin: 0px;
+  padding: 0px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+img {
+  max-width: 100%;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+body {
+  margin: 0;
+}
+
+html,
+body {
+  box-sizing: border-box;
+  margin: 1rem;
+  max-height: 100%;
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+p {
+  font-size: 1.5rem;
+}
+
+/* header */
+
+.header-container {
+  /* border: 1px solid black; */
+  display: flex;
+  height: 10%;
+  justify-content: space-between;
+}
+
+.header-container > div {
+  display: flex;
+  align-items: center;
+  flex-basis: 250px;
+}
+
+.toggle-container {
+  justify-content: flex-end;
+}
+
+.toggle,
+.model-behaviour,
+.next {
+  cursor: pointer;
+  letter-spacing: 0.2rem;
+  z-index: 3;
+  text-transform: uppercase;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 500ms ease-in;
+}
+
+.model-behaviour {
+  z-index: 1;
+  font-size: 1.5rem;
+}
+
+.toggle:hover,
+.model-behaviour:hover,
+.next:hover {
+  color: chocolate;
+  letter-spacing: 0.3rem;
+  transition: 500ms ease-in;
+}
+
+.spin:hover {
+  letter-spacing: 0.2rem;
+  transition: 600ms ease-in;
+  color: black;
+}
+
+.spin {
+  letter-spacing: 0.4rem;
+  z-index: 3;
+  cursor: pointer;
+  color: white;
+  transition: 900ms ease-in;
+  animation: spin 1200ms ease-in forwards;
+  text-transform: uppercase;
+}
+
+@keyframes spin {
+  25% {
+    transform: rotate(90deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  75% {
+    transform: rotate(270deg);
+  }
+  100% {
+    transform: rotate(360deg);
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* menu item */
+
+.menu-container {
+  position: fixed;
+  display: flex;
+  justify-content: flex-end;
+  z-index: 2;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+
+.navigation-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  background: chocolate;
+  transform: skewX(15deg);
+  flex-basis: 100%;
+  animation: expand 1200ms ease-in forwards;
+}
+
+.navigation-close {
+  position: fixed;
+  display: flex;
+  background: chocolate;
+  z-index: 2;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  animation: close 1200ms ease-out forwards;
+}
+
+@keyframes expand {
+  50% {
+    transform: translateX(34%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+@keyframes close {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.menu-list {
+  list-style: none;
+  flex-basis: 30px;
+}
+
+.list-items-home,
+.list-items-worst.behaviour,
+.list-items-best.behaviour,
+.list-items-bali.behaviour {
+  font-size: 1.5rem;
+}
+
+a.item {
+  text-decoration: none;
+  color: black;
+}
+
+a.item:hover {
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+a.with-transition {
+  transition: 800ms;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+a.item:visited {
+  color: white;
+  font-weight: bolder;
 }
+
+a.item:visited:hover {
+  color: black;
+}
+
+/* homepage*/
+
+.home-container {
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  /* background: cornsilk; */
+  margin: 2rem 0rem;
+  height: 100%;
+}
+
+.main-image,
+.about-container {
+  display: flex;
+  justify-content: center;
+  flex: 1 1 1;
+}
+
+.main-image {
+  justify-content: flex-start;
+}
+
+.half-image {
+  width: 460px;
+}
+
+.about-container {
+  flex: 1 1 420px;
+  justify-content: center;
+  flex-direction: column;
+  overflow: hidden;
+  position: relative;
+  margin-left: 2rem;
+}
+
+.about-inner {
+  flex: 1;
+}
+
+.her-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-basis: 120px;
+  width: 310%;
+  position: relative;
+  /* background-color: teal; */
+}
+
+.her-0 {
+  font-family: "didot";
+  padding: 1rem;
+  transition: 2500ms ease-in;
+  overflow: hidden;
+  position: relative;
+  flex: 1;
+}
+
+.next-button {
+  display: flex;
+  justify-content: center;
+}
+
+.next {
+  cursor: pointer;
+  z-index: 0;
+}
+
+/* .container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.big, .normal{
+  flex: 1 1 200px;
+  margin: 0.5rem;
+} */

@@ -1,24 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { Switch, Route } from "react-router-dom";
+import React from "react";
+import Header from "./components/navbar/header";
+import WorstBehaviour from "./components/worst/worstBehaviour";
+import BestBehaviour from "./components/best/bestBehaviour";
+import BaliBehaviour from "./components/bali/baliBehaviour";
+import Home from "./components/home/home";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <React.Fragment>
+      <Header />
+      <div className="routing-container">
+        <Switch>
+          <Route path="/home" component={Home} />
+          <Route path="/worst behaviour" component={WorstBehaviour} />
+          <Route path="/best behaviour" component={BestBehaviour} />
+          <Route path="/bali behaviour" component={BaliBehaviour} />
+          <Route paht="/" exact component={Home} />
+        </Switch>
+      </div>
+    </React.Fragment>
   );
 }
 
