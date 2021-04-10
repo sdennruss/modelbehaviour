@@ -1,7 +1,12 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Title = () => {
-  return <h1 className="model-behaviour">Model Behaviour</h1>;
+  return (
+    <Link to="/home" className="model-behaviour">
+      Model Behaviour.{" "}
+    </Link>
+  );
 };
 
 export default Title;

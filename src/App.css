@@ -4,6 +4,19 @@
   padding: 0px;
 }
 
+@font-face {
+  font-family: "RecifeDisplay-Light";
+  src: url("RecifeDisplay-Light.woff2") format("woff2"),
+    url("RecifeDisplay-Light.woff") format("woff"),
+    url("RecifeDisplay-Light.ttf") format("truetype");
+}
+@font-face {
+  font-family: "MaisonNeue-Light";
+  src: url("MaisonNeue-Light.woff2") format("woff2"),
+    url("MaisonNeue-Light.woff") format("woff"),
+    url("MaisonNeue-Light.ttf") format("truetype");
+}
+
 img {
   max-width: 100%;
 }
@@ -25,15 +38,22 @@ h1 {
 
 p {
   font-size: 1.5rem;
+  font-family: "MaisonNeue-Light";
+}
+
+a {
+  font-family: "MaisonNeue-Light";
 }
 
 /* header */
 
-.header-container {
+.header-container,
+.footer-container {
   /* border: 1px solid black; */
   display: flex;
   height: 10%;
   justify-content: space-between;
+  animation: transitionIn 900ms ease-in;
 }
 
 .header-container > div {
@@ -42,33 +62,48 @@ p {
   flex-basis: 250px;
 }
 
+.header-container {
+  border-bottom: 1px solid black;
+  padding-bottom: 0.5rem;
+}
+
 .toggle-container {
   justify-content: flex-end;
 }
 
 .toggle,
 .model-behaviour,
-.next {
+.next,
+.footer {
   cursor: pointer;
   letter-spacing: 0.2rem;
   z-index: 3;
   text-transform: uppercase;
-  font-weight: 500;
   cursor: pointer;
   transition: 500ms ease-in;
 }
 
-.model-behaviour {
+a.model-behaviour {
+  text-decoration: none;
+  color: black;
   z-index: 1;
   font-size: 1.5rem;
 }
 
 .toggle:hover,
 .model-behaviour:hover,
-.next:hover {
+.next:hover,
+.footer:hover {
   color: chocolate;
   letter-spacing: 0.3rem;
-  transition: 500ms ease-in;
+  transition: 300ms ease-in;
+}
+
+.toggle,
+.model-behaviour,
+.footer,
+.next {
+  font-weight: 600;
 }
 
 .spin:hover {
@@ -85,6 +120,7 @@ p {
   transition: 900ms ease-in;
   animation: spin 1200ms ease-in forwards;
   text-transform: uppercase;
+  font-weight: 600;
 }
 
 @keyframes spin {
@@ -179,6 +215,11 @@ a.item:hover {
 
 a.with-transition {
   transition: 800ms;
+  font-size: 5rem;
+}
+
+a.with-transition:hover::after {
+  content: ".";
 }
 
 a.item:visited {
@@ -201,6 +242,7 @@ a.item:visited:hover {
   /* background: cornsilk; */
   margin: 2rem 0rem;
   height: 100%;
+  animation: transitionIn 900ms ease-in;
 }
 
 .main-image,
@@ -214,8 +256,22 @@ a.item:visited:hover {
   justify-content: flex-start;
 }
 
+@keyframes transitionIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 .half-image {
-  width: 460px;
+  width: 445px;
+}
+
+.half-image:hover {
+  transform: scale(2);
+  filter: grayscale(100%);
 }
 
 .about-container {
@@ -235,16 +291,15 @@ a.item:visited:hover {
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-basis: 120px;
-  width: 310%;
+  flex-basis: 100px;
+  width: 810%;
   position: relative;
   /* background-color: teal; */
 }
 
 .her-0 {
-  font-family: "didot";
   padding: 1rem;
-  transition: 2500ms ease-in;
+  transition: 3500ms ease-in;
   overflow: hidden;
   position: relative;
   flex: 1;
@@ -260,12 +315,320 @@ a.item:visited:hover {
   z-index: 0;
 }
 
-/* .container {
-  display: flex;
-  flex-wrap: wrap;
+.next.mobile {
+  display: none;
 }
 
-.big, .normal{
-  flex: 1 1 200px;
-  margin: 0.5rem;
+/* Wb */
+
+.wb-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background-color: blanchedalmond; */
+  height: 740px;
+  margin-top: 2rem;
+  animation: transitionIn 900ms ease-in;
+}
+
+.wb {
+  font-size: 10rem;
+  position: relative;
+  justify-content: center;
+  font-family: "RecifeDisplay-Light";
+}
+
+/* .wb-inner {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
 } */
+
+.wb.left {
+  transform: rotate(-90deg);
+  left: 15rem;
+}
+
+.wb.right {
+  right: 3rem;
+  transform: rotate(90deg);
+}
+
+.wb-images-container {
+  display: flex;
+  /* flex-wrap: wrap; */
+  overflow: hidden;
+  width: 100%;
+  height: 800px;
+}
+
+.wb-images {
+  width: 34%;
+  margin-right: 2rem;
+}
+
+.wb-main {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex: 1;
+}
+
+.wb-images.two {
+  margin-right: unset;
+}
+
+.wi-container,
+.bb-container,
+.bb-container-2 {
+  display: flex;
+  justify-content: space-evenly;
+  overflow: hidden;
+}
+
+.image.left {
+  margin-right: 2rem;
+}
+
+.hide-para {
+  display: none;
+}
+
+/* .image:hover + .hide-para {
+  display: flex;
+} */
+
+.image:hover,
+.bb-images:hover,
+.bb-images-right:hover {
+  transform: scale(0.8);
+  filter: grayscale(100%);
+}
+
+.image:hover + .hide-para,
+.bb-images-right:hover + .hide-para,
+.bb-images:hover + .hide-para {
+  display: inline-block;
+}
+
+.image.right,
+.image.small {
+  margin-left: 2rem;
+  width: 100%;
+}
+
+.image {
+  margin-top: 2rem;
+  cursor: pointer;
+  transition: transform 1000ms ease-out;
+}
+
+.image.bottom {
+  margin-right: 2rem;
+}
+
+.wb-col-1,
+.wb-col-2,
+.bb-col-1,
+.bb-col-2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.bb-images {
+  flex: 1;
+  margin: 2rem 2rem 0 0;
+  transition: transform 1000ms ease-out;
+  cursor: pointer;
+}
+
+.bb-images-right {
+  flex: 1;
+  margin: 2rem 0rem 0rem 2rem;
+  transition: transform 1000ms ease-out;
+  cursor: pointer;
+}
+
+.contact-container {
+  display: flex;
+  position: relative;
+  height: 674px;
+  overflow: hidden;
+  margin-top: 2rem;
+  animation: transitionIn 900ms ease-in;
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  bottom: 0;
+  height: 230px;
+  padding: 2rem;
+}
+
+.contact {
+  flex: 1;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  bottom: 5rem;
+}
+
+.contact.button {
+  align-items: flex-start;
+}
+
+.contact.email,
+.contact.button {
+  align-items: center;
+}
+
+.mail-icon {
+  width: 5%;
+}
+
+.shanice-email {
+  padding-left: 1rem;
+}
+
+a.email-button {
+  cursor: pointer;
+  background: #decfad;
+  width: 50%;
+  padding: 1.5rem;
+  border-radius: 50px;
+  box-shadow: -1px 3px 5px #555;
+  text-align: center;
+  transition: 200ms ease-in;
+  color: black;
+  text-decoration: none;
+  font-size: 1.5rem;
+}
+
+.email-button:hover {
+  /* transform: scale(0.98); */
+  background: #decfad9c;
+}
+
+.shanicedr {
+  font-size: 5rem;
+  font-weight: 600;
+  font-family: "RecifeDisplay-Light";
+  white-space: pre-line;
+  text-transform: lowercase;
+}
+
+.shanice-email {
+  font-weight: 500;
+}
+
+.footer-container {
+  align-items: center;
+  height: 5vh;
+}
+
+a.footer {
+  color: black;
+  text-decoration: none;
+  font-size: 1.5rem;
+}
+
+.image-cred-mobile {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  a.with-transition {
+    font-size: 4rem;
+  }
+
+  .about-container {
+    margin-left: unset;
+  }
+
+  .her-container {
+    width: 1840%;
+    flex-basis: 50px;
+  }
+
+  .next.desktop {
+    display: none;
+  }
+
+  .next.mobile,
+  .image-cred-mobile {
+    display: flex;
+  }
+
+  .wb-container {
+    height: 570px;
+  }
+  .wb-images-container,
+  .photo-credits {
+    height: unset;
+  }
+
+  .wi-container {
+    flex-wrap: wrap;
+  }
+
+  .image.small,
+  .image.right {
+    margin-left: 0;
+  }
+
+  .bb-images {
+    margin-right: 0;
+  }
+  .bb-images-right {
+    margin-left: 0;
+  }
+
+  .bb-container,
+  .bb-container-2 {
+    flex-wrap: wrap;
+  }
+
+  .contact-container {
+    height: unset;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .contact-info {
+    padding: unset;
+    height: 300px;
+  }
+
+  .contact-info {
+    position: relative;
+    padding: 0.5rem;
+  }
+
+  .contact {
+    bottom: unset;
+  }
+
+  a.email-button {
+    width: 50%;
+  }
+
+  .contact {
+    justify-content: center;
+    text-align: center;
+  }
+
+  .contact.button {
+    align-items: flex-start;
+  }
+
+  .hide-para {
+    text-align: center;
+  }
+}

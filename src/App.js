@@ -6,6 +6,7 @@ import WorstBehaviour from "./components/worst/worstBehaviour";
 import BestBehaviour from "./components/best/bestBehaviour";
 import BaliBehaviour from "./components/bali/baliBehaviour";
 import Home from "./components/home/home";
+import Footer from "./components/footer/footer";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           <Route paht="/" exact component={Home} />
         </Switch>
       </div>
+      <Footer />
     </React.Fragment>
   );
 }

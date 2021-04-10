@@ -26,7 +26,7 @@ const Toggle = () => {
             className={rotate}
             onClick={() => handleToggle(!expand, "navigation-close", "spin")}
           >
-            Menu
+            Menu.
           </p>
         </div>
       </div>
