@@ -8,8 +8,8 @@ const Toggle = () => {
   const [rotate, setRotate] = useState("toggle");
 
   const handleToggle = (expand, close, spin) => {
-    expand == false ? setToggle(close) : setToggle("");
-    expand == true ? setRotate(spin) : setRotate("toggle");
+    expand === false ? setToggle(close) : setToggle("");
+    expand === true ? setRotate(spin) : setRotate("toggle");
 
     setExpand(expand);
   };

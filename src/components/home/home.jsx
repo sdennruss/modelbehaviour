@@ -5,7 +5,6 @@ import Next from "./next";
 const Home = () => {
   const [next, setNext] = useState(0);
   const [move, setMove] = useState(0);
-  const [mobilemove, setMobileMove] = useState(0);
 
   const handleNext = (number, moveLeft) => {
     number === 4 ? setNext(0) : setNext(number);
@@ -25,6 +24,7 @@ const Home = () => {
       <div className="home-container">
         <div className="main-image">
           <img
+            alt="shanice"
             className="half-image"
             src={process.env.PUBLIC_URL + `/landingimages/home-${next}.jpg`}
           />

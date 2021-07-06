@@ -6,8 +6,6 @@ const Her = ({ move }) => {
     right: `${move}rem`,
   };
 
-  console.log(styles);
-
   return (
     <React.Fragment>
       <div className="her-container">

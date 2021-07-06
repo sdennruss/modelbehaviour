@@ -6,6 +6,7 @@ const BaliBehaviour = () => {
       <div className="contact-container">
         <div className="contact-image-container">
           <img
+            alt=""
             className="contact-image"
             src={process.env.PUBLIC_URL + `/landingimages/contact-1.jpg`}
           />

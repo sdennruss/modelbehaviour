@@ -236,8 +236,8 @@ a.item:visited:hover {
 .home-container {
   display: flex;
   position: relative;
-  align-items: center;
-  justify-content: center;
+  /* align-items: center;
+  justify-content: center; */
   flex-wrap: wrap;
   /* background: cornsilk; */
   margin: 2rem 0rem;
@@ -249,11 +249,11 @@ a.item:visited:hover {
 .about-container {
   display: flex;
   justify-content: center;
-  flex: 1 1 1;
 }
 
 .main-image {
   justify-content: flex-start;
+  width: 445px;
 }
 
 @keyframes transitionIn {
@@ -263,10 +263,6 @@ a.item:visited:hover {
   100% {
     opacity: 1;
   }
-}
-
-.half-image {
-  width: 445px;
 }
 
 .half-image:hover {
@@ -349,7 +345,7 @@ a.item:visited:hover {
 
 .wb.left {
   transform: rotate(-90deg);
-  left: 15rem;
+  left: 12rem;
 }
 
 .wb.right {
@@ -539,11 +535,10 @@ a.footer {
   font-size: 1.5rem;
 }
 
-.image-cred-mobile {
-  display: none;
-}
-
 @media (max-width: 768px) {
+  .home-container {
+    height: unset;
+  }
   a.with-transition {
     font-size: 4rem;
   }
@@ -561,8 +556,7 @@ a.footer {
     display: none;
   }
 
-  .next.mobile,
-  .image-cred-mobile {
+  .next.mobile {
     display: flex;
   }
 
@@ -585,9 +579,11 @@ a.footer {
 
   .bb-images {
     margin-right: 0;
+    flex: unset;
   }
   .bb-images-right {
     margin-left: 0;
+    flex: unset;
   }
 
   .bb-container,
@@ -603,7 +599,7 @@ a.footer {
 
   .contact-info {
     padding: unset;
-    height: 300px;
+    height: 280px;
   }
 
   .contact-info {
@@ -613,6 +609,7 @@ a.footer {
 
   .contact {
     bottom: unset;
+    flex: 0 1 90px;
   }
 
   a.email-button {
@@ -630,5 +627,33 @@ a.footer {
 
   .hide-para {
     text-align: center;
+  }
+
+  .half-image:hover {
+    transform: unset;
+    filter: grayscale(100%);
+  }
+
+  .half-image,
+  .main-image {
+    height: unset;
+  }
+
+  .main-image {
+    justify-content: unset;
+    width: unset;
+    display: unset;
+  }
+
+  .wb {
+    font-size: 8rem;
+  }
+
+  .shanicedr {
+    font-size: 3rem;
+  }
+
+  .wb-container {
+    margin: unset;
   }
 }
